@@ -1,23 +1,46 @@
 import React from 'react';
+import astronaut from './assets/astronaut_facing_side_space_race.jpg'
 
-// 1. Define the full Tailwind classes in a dictionary mapping object
-const BANNER_STYLES = {
-  success: "bg-emerald-500 text-white",
-  warning: "bg-amber-400 text-amber-950",
-  danger: "bg-rose-600 text-white",
-  info: "bg-sky-500 text-white",
-};
+// const container_image_style = {
+//   backgroundImage: `url(${astronaut})`,
+//   backgroundSize: 'cover',
+//   backgroundPosition: 'center',
+//   height: '100vh',
+//   width: '100vw',
+// };
 
-export default function Banner({ variant = "info", title, message }) {
-  // 2. Safely grab the exact compiled classes based on the prop
-  const variantClass = BANNER_STYLES[variant] || BANNER_STYLES.info;
+// export default function StaticBackground() {
+//   return (
+//     <div style={container_image_style}>
+//       <h1 style={{ color: 'white', textAlign: 'center', paddingTop: '20%' }}>
+//         Welcome to the Mars Weather API!
+//       </h1>
+//     </div>
+//   );
+// }
 
+
+export default function App() {
   return (
-    // <div className={`flex flex-col md:flex-row gap-2 p-4 rounded-md shadow-sm ${variantClass}`}>
-   <div className="h-screen w-screen bg-[url('/assets/astronaut_facing_side_space_race.jpg')] bg-cover bg-center">
-  {/* Content goes here */}
+    <div className="relative h-screen overflow-hidden">
+
+      <img 
+        src={astronaut}
+        alt="Astronaut in retro background"
+        className="absolute inset-0 w-full h-full object-cover -z-10"
+      />
+
+      <button className="border-4 border-emerald-500 ring-4 ring-blue-500 ring-offset-4 rounded-xl">
+        Perfectly Rounded Corners
+      </button>
+
+      <div className="flex items-center justify-center h-full">
+        <h1 className="text-white text-4xl font-bold bg-black bg-opacity-50 p-6 rounded">
+          Welcome to the Mars Weather API!
+        </h1>
+      </div>
+
     </div>
-    // </div>
+
   );
 }
-
