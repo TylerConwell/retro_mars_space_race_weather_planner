@@ -190,6 +190,7 @@ export default function App() {
 
       {/* Main Container: Forces items to fit the viewport width exactly */}
       <div className="w-full max-w-7xl flex flex-row gap-2 md:gap-4 justify-between mt-20 z-10 px-2">
+        
         {forecastData.map((data, index) => (
           // flex-1 forces each of the 7 columns to take up equal, scaling space
           <div key={index} className="flex-1 flex flex-col items-center gap-3 min-w-0">
